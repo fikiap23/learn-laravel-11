@@ -13,6 +13,7 @@
     <a href="/">Home</a>
     <a href="/about">About</a>
     <h1>Halaman About</h1>
+    <h2>Nama Saya {{ $nama }}</h2>
 
     <script src="js/script.js"></script>
 </body>
