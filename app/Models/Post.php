@@ -27,7 +27,7 @@ class Post {
         ];
     }
 
-    public static function findOneBySlug($slug){
+    public static function findBySlug($slug){
         $posts = static::all();
         return Arr::first($posts, function($p) use ($slug){
             return $p['slug'] === $slug;
