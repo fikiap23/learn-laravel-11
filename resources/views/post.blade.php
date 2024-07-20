@@ -3,7 +3,7 @@
     <article class="py-8 max-w-screen-md">
         <h1 class="text-3xl font-semibold text-gray-700 hover:underline">{{ $post['title'] }}</h1>
         <div class="text-base text-gray-500">
-            <a href="#">{{ $post['author'] }}</a> | 10 Juli 2024
+            <a href="#">{{ $post['author'] }}</a> | {{ $post->created_at->diffForHumans() }}
         </div>
         <p class="my-4 font-light">{{ $post['body'] }}</p>
         <a href="/posts"
