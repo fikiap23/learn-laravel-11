@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Support\Arr;
 
 class Post {
-    public static function all(){
+    public static function all(): array{
         return  [
             [
                 'title' => 'Judul Post Pertama',
@@ -27,9 +27,14 @@ class Post {
         ];
     }
 
-    public static function findBySlug($slug){
+    public static function findBySlug($slug): array{
         $posts = static::all();
-        return Arr::first($posts, fn($p) => $p['slug'] === $slug);
+        $post = Arr::first($posts, fn($p) => $p['slug'] === $slug);
+        if(!$post){
+            abort(404);
+        }
+
+        return $post;
     }
 }
 ?>
