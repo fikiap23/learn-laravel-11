@@ -35,7 +35,7 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{slug}', function ($slug) {
-        return view('post', ['title' =>'Single Post', 'post' => Post::findBySlug($slug)]);
+        return view('post', ['title' =>'Single Post', 'post' => Post::firstWhere('slug', $slug)]);
 });
 
 Route::get('/contact', function () {
